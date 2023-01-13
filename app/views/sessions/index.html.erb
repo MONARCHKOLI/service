@@ -1,0 +1,59 @@
+<nav class="navbar navbar-light bg-dark">
+  <div class="container-fluid">
+      <img src="https://media.istockphoto.com/id/515708494/photo/mahatma-gandhi-hall.jpg?s=612x612&w=0&k=20&c=0r0tu3VAbZdmf4RlwI3Q-xZjiMa4abSfsvnDxHVlGCo=" alt="no image found" width="100" height="50" class="d-inline-block align-text-center">
+      <div><%= link_to "Login" ,"sessions/new",{class:"btn btn-success"}%>
+      <%= link_to "Sign Up", new_user_path ,{class:"btn btn-info"}%></div>
+  </div>  
+</nav>
+
+
+
+<table class="table table-hover table-bordered border-dark" >
+<thead class="table-info">
+    <tr>
+      <th scope="col">User Id</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Book Slot</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  <div class="container">
+  <% @tasks.each do |task,user_id|%>  
+  <% if task.status == "ACTIVE"%>
+
+
+  <tr  class="text-dark bg-success">
+    <th scope="row">
+    <p>
+        <%= task.user_id %>
+      </p>
+      </th>
+      <td>
+      <p>
+        <%= task.category %>
+      </p>
+    </td> 
+    <td>
+      <p>
+        
+        <%= task.description %>
+      </p>
+    </td> 
+    <td> 
+       <p>
+        <%= task.amount %>/-
+       </p>
+    </td> 
+    <td> 
+       <p>
+        <%= link_to "Book" %>
+       </p>
+    </td>
+    <%end%>
+    <%end%>
+    </div>
+  </tbody>
+</table>

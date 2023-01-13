@@ -1,0 +1,7 @@
+<% if flash[:error] %>
+  <%= content_tag :h1, flash[:error] %>
+<% else %>
+<%= content_tag :h1, "Create Account" %>
+<% end %>
+
+<%= render "form" %>
