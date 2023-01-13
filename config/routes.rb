@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :tasks
   end
+
+  resources :workers
   
   resources :sessions, only: [:new,:index, :create, :destroy]
 end
