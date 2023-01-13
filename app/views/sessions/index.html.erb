@@ -4,56 +4,37 @@
       <div><%= link_to "Login" ,"sessions/new",{class:"btn btn-success"}%>
       <%= link_to "Sign Up", new_user_path ,{class:"btn btn-info"}%></div>
   </div>  
-</nav>
+</nav><br>
 
 
 
-<table class="table table-hover table-bordered border-dark" >
-<thead class="table-info">
-    <tr>
-      <th scope="col">User Id</th>
-      <th scope="col">Category</th>
-      <th scope="col">Description</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Book Slot</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-  <div class="container">
-  <% @tasks.each do |task,user_id|%>  
-  <% if task.status == "ACTIVE"%>
 
 
-  <tr  class="text-dark bg-success">
-    <th scope="row">
-    <p>
-        <%= task.user_id %>
-      </p>
-      </th>
-      <td>
-      <p>
-        <%= task.category %>
-      </p>
-    </td> 
-    <td>
-      <p>
-        
-        <%= task.description %>
-      </p>
-    </td> 
-    <td> 
-       <p>
-        <%= task.amount %>/-
-       </p>
-    </td> 
-    <td> 
-       <p>
+
+<div class="container" style="border:2px solid black;padding:20px">
+<h1 style="text-align:center">Current <i><b style="color:green">ACTIVE</b></i> Task!!!</h1><br>
+  <div class="row g-4">
+    <% @tasks.each do |task|%>  
+      <% if task.status == "ACTIVE"%>
+    <div class="col-4" style="border:2px solid black;text-align:center">
+      <div class="row">
+        User Id : <%= task.user_id %><br>
+      </div>
+      <div class="row">
+        Category : <%= task.category %><br>
+      </div>
+      <div class="row">
+        Description : <%= task.description %><br>
+      </div>
+      <div class="row">
+        Amount : <%= task.amount %> /-<br>
+      </div>
+      <div class="row">
         <%= link_to "Book" %>
-       </p>
-    </td>
-    <%end%>
-    <%end%>
+      </div>
     </div>
-  </tbody>
-</table>
+
+      <%end%>
+    <%end%>
+  </div>
+</div>
