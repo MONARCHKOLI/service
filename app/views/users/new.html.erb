@@ -1,7 +1,10 @@
+<div class="container border bg-info" style="width:500px;text-align:center">
+
 <% if flash[:error] %>
-  <%= content_tag :h1, flash[:error] %>
+  <%= content_tag :h1, flash[:error], {style:"color:red"} %>
 <% else %>
-<%= content_tag :h1, "Create Account" %>
+<%= content_tag :h1, "Create Account", {style:"color:green"} %>
 <% end %>
 
 <%= render "form" %>
+</div>

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
     def show
       $count =1
-        @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     def index
@@ -16,12 +16,13 @@ class UsersController < ApplicationController
   
     def create
       @user = User.create(user_params)
-      if @user.valid?
+      if @user.save
         session[:user_id] = @user.id
         redirect_to new_session_path
       else
+        
         flash[:error] = "Error- please try to create an account again."
-        redirect_to new_user_path
+        render :new, status: :unprocessable_entity
       end
     end
 
