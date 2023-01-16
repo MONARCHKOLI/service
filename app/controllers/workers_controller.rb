@@ -5,11 +5,11 @@ class WorkersController < ApplicationController
 
     def create
         byebug
-
-        @task = Task.find(params[:id])
         @user = User.find(params[:user_id])
-        @worker = @user.workers.create(worker_params)
+        @task = Task.find(params[:task_id])
+        @worker = @task.workers.create(worker_params)
         if @worker.save
+            flash[:notice]= "Task Alloted Successfully"
             redirect_to root_path
         else
             render :new, status: :unprocessable_entity

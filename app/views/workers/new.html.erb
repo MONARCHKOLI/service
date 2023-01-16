@@ -1,18 +1,18 @@
-<%= form_with model: @worker do |f| %>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
-    <%= f.label :mobileno %><br>
-    <%= f.text_field :mobileno %><br>
-    <%= f.label :address %><br>
-    <%= f.text_area :address %><br>
+<div class="container">
+    <h1>Please Sign up to register the task to your name .....</h1>
 
-
-
-    
-    <%= f.label :email %><br>
-    <%= f.text_field :email %><br>
-    <%= f.label :age %><br>
-    <%= f.text_field :age %><br>
-    
-    <%= f.submit "Submit!!"%>
-<% end %>
+        <%= form_with model: [:user, :task, @worker]  do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %><br>
+            <%= f.label :mobileno %>
+            <%= f.text_field :mobileno %><br>
+            <%= f.label :address %>
+            <%= f.text_area :address %><br>
+            <%= f.label :email %>
+            <%= f.text_field :email %><br>
+            <%= f.label :age %>
+            <%= f.text_field :age %><br>
+            
+            <%= f.submit "Submit!!"%>
+        <% end %>
+</div>

@@ -37,6 +37,7 @@ class UsersController < ApplicationController
             flash[:notice] = "Updating Profile Sucessfully"
             redirect_to @user
         else
+            # redirect_to edit_user_path
             redirect_to :edit, status: :unprocessable_entity
         end
     end

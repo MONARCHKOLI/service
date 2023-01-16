@@ -5,11 +5,10 @@ class TasksController < ApplicationController
         @user = User.find(params[:user_id])
         @task = @user.tasks.create(task_params)
         redirect_to user_path(@user)
-        
     end
     
     def new
-
+        @task = Task.new
     end
 
     def destroy

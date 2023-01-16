@@ -4,7 +4,7 @@
       <div class="col-md-3">
         <div class="mb-2 row">
         <%= form.label :category ,{for:"floatingSelectGrid",class:"form-label"}%><br>
-        <%= form.select :category ,["plumber","electrician"],{class:"form-control form-control-lg" ,id:"floatingSelectGrid" }%>
+        <%= form.select :category ,["plumber","electrician"],{class:"form-control form-control-lg" ,id:"floatingSelectGrid" }%> 
         </div>
       </div>
       <div class="col-md-3">
@@ -23,6 +23,7 @@
         <div class="mb-2 row">
         <%= form.label :amount,{class:"form-label"} %><br>
         <%= form.text_field :amount %><br>
+        
         </div>
       </div>
         <%= form.submit %><br>

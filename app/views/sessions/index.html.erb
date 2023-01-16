@@ -17,6 +17,9 @@
     <% @tasks.each do |task|%>  
       <% if task.status == "ACTIVE"%>
     <div class="col-4" style="border:2px solid black;text-align:center">
+    <div class="row">
+        Task Id : <%= task.id %><br>
+      </div>
       <div class="row">
         User Id : <%= task.user_id %><br>
       </div>
@@ -30,7 +33,7 @@
         Amount : <%= task.amount %> /-<br>
       </div>
       <div class="row">
-        <%= link_to "Book" , "workers/new"%>
+        <%= link_to "Book" , new_user_task_worker_path(task.user_id,task.id)%>
       </div>
     </div>
 
