@@ -1,0 +1,103 @@
+
+<% if task.status == "ACTIVE"%>
+
+
+<tr  class="text-dark bg-success">
+  <th scope="row">
+  <p>
+      <%= $count %>
+    </p>
+    </th>
+    <td>
+    <p>
+      <%= task.category %>
+    </p>
+  </td> 
+  <td>
+    <p>
+      
+      <%= task.description %>
+    </p>
+  </td> 
+  <td> 
+     <p>
+      <%= task.amount %>/-
+     </p>
+  </td>
+  <td> 
+     <p>
+      <%= task.status %>
+     </p>
+  </td>
+  <td> 
+   <p>
+    <%= task.created_at.strftime("%H:%M:%S") %>
+   </p>
+</td>
+<td> 
+<p>
+ <%= task.updated_at.strftime("%H:%M:%S") %>
+</p>
+</td>
+  <td>
+  <p><%= link_to "Edit Profile" , edit_user_task_path(@user,task), class: 'btn btn-outline-dark btn-sm'%>
+    <%= link_to "Delete Task", [task.user, task], data: 
+    {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } , class: 'btn btn-outline-dark btn-sm'%>
+  </p>
+  </td>
+ </tr>
+ <% $count = $count + 1 %>
+  
+<% elsif task.status == "DEACTIVE"%>
+<tr class="text-dark bg-danger">
+<th scope="row">
+<p>
+    <%= $count %>
+  </p>
+  </th>
+  <td>
+  <p>
+    <%= task.category %>
+  </p>
+</td> 
+<td>
+  <p>
+    
+    <%= task.description %>
+  </p>
+</td> 
+<td> 
+   <p>
+    <%= task.amount %>/-
+   </p>
+</td>
+<td> 
+   <p>
+    <%= task.status %>
+   </p>
+</td>
+<td> 
+   <p>
+    <%= task.created_at.strftime("%H:%M:%S") %>
+   </p>
+</td>
+<td> 
+<p>
+ <%= task.updated_at.strftime("%H:%M:%S") %>
+</p>
+</td>
+<td>
+<p><%= link_to "Edit Profile" , edit_user_task_path(@user,task), class: 'btn btn-outline-dark btn-sm'%>
+  <%= link_to "Delete Task", [task.user, task], data: 
+  {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } , class: 'btn btn-outline-dark btn-sm'%>
+</p>
+</td>
+</tr>
+<% $count = $count+1 %>
+<%end%>

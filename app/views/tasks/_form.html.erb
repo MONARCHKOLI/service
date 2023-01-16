@@ -1,0 +1,33 @@
+<div class="text-center">
+    <%= form_with model: [ @user, @user.tasks.build ] do |form| %>
+      <div class="row">
+      <div class="col-md-3">
+        <div class="mb-2 row">
+        <%= form.label :category ,{for:"floatingSelectGrid",class:"form-label"}%><br>
+        <%= form.select :category ,["plumber","electrician"],{class:"form-control form-control-lg" ,id:"floatingSelectGrid" }%> 
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-2 row">
+        <%= form.label :status ,{for:"floatingSelectGrid",class:"form-label"}%><br>
+        <%= form.select :status,["ACTIVE","DEACTIVE"],{class:"form-control form-control-lg" ,id:"floatingSelectGrid" }%>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-2 row">
+        <%= form.label :description ,{for:"exampleFormControlTextarea1" ,class:"form-label"}%><br>
+        <%= form.text_area :description, {class:"form-control" ,id:"exampleFormControlTextarea1" }%>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mb-2 row">
+        <%= form.label :amount,{class:"form-label"} %><br>
+        <%= form.text_field :amount %><br>
+        
+        </div>
+      </div>
+        <%= form.submit %><br>
+      </div>  
+      
+    <% end %><br>
+</div>
